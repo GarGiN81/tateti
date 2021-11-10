@@ -13,6 +13,6 @@ Universidad Nacional del Comahue
 
 -**Garrido Gisela** - legajo 3463 - mail: gisela.garrido@est.fi.uncoma.edu.ar - usuario github: GarGiN81  
 -**Neyra Gustavo** - legaja 2020 - mail: gustavo.neyra@est.fi.uncoma.edu.ar - usuario github: GENEY11
-
+-**Vera Guillermo** - legajo 3602 - mail: guillermo.vera@est.fi.uncoma.edu.ar - usuario github: guilleV12
 
 
