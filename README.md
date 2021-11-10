@@ -11,7 +11,8 @@ Universidad Nacional del Comahue
 
 ## Integrantes del equipo 3
 
--**Garrido Gisela** - legajo 3463 - mail: gisela.garrido@est.fi.uncoma.edu.ar - usuario github: GarGiN81
+-**Garrido Gisela** - legajo 3463 - mail: gisela.garrido@est.fi.uncoma.edu.ar - usuario github: GarGiN81  
+-**Neyra Gustavo** - legaja 2020 - mail: gustavo.neyra@est.fi.uncoma.edu.ar - usuario github: GENEY11
 
 
 
