@@ -85,32 +85,19 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
     //boolean $juegoGanador
     $nroJuego=1;
     $juegoGanador=false;
-    $cantElementosColeccion= count($coleccionJuegos[$nombreJugadorSolicitado]);
+    $cantElementosColeccion= count($coleccionJuegos);
     $indiceGanador=-1;
-    $signoJugador="";
-    if ($coleccionJuegos[$nroJuego]["jugadorCruz"]==$nombreJugadorSolicitado){
-        $signoJugador="jugadorCruz";
-    }else {
-        $signoJugador="jugadorCirculo";
-    }
-    while ($coleccionJuegos[$nroJuego][$signoJugador]<=$cantElementosColeccion && $juegoGanador=false ) {
-        if ($coleccionJuegos[$nroJuego][$signoJugador]=="jugadorCruz"){
-            if ($coleccionJuegos[$nroJuego]["puntosCruz"]>0){
-                $juegoGanador=true;
-            }
-        }else {
-            if ($coleccionJuegos[$nroJuego]["puntosCirculo"]>0){
-                $juegoGanador=true;
-            }
+    while ($nroJuego<$cantElementosColeccion && $juegoGanador != true){
+        if (($coleccionJuegos[$nroJuego]["jugadorCruz"] ==$nombreJugadorSolicitado || $coleccionJuegos[$nroJuego]["jugadorCirculo"] ==$nombreJugadorSolicitado) && ($coleccionJuegos[$nroJuego]["puntosCruz"]>0 || $coleccionJuegos[$nroJuego]["puntosCirculo"]>0)){
+        $indiceGanador = $nroJuego;
+        $juegoGanador = true;
+         
         }
-        $nroJuego=$nroJuego+1;
-    }
-    $indiceGanador=$nroJuego;
-    return ($indiceGanador);
+        $nroJuego ++;
+        }
+    return $indiceGanador;
+        
 }
-
-
-
 
 
 /**************************************/
