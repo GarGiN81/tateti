@@ -17,12 +17,11 @@ include_once("tateti.php");
 /**************************************/
 /**
  * inicializa una estructura de datos con ejemplos de juegos y retorna una colección de juegos
- * @param string $nombreX, $nombreO
- * @param int $ptosX, $ptosO
+
  * @return array coleccion de juegos
  */
 //punto 1
-function cargarJuegos ($nombreX, $nombreO, $ptosX, $ptosO){
+function cargarJuegos (){
 //array $coleccionJuegos
 $coleccionJuegos[0] = ["jugadorCruz"=> "Maxi" , "jugadorCirculo" => "Juan", "puntosCruz"=> 5, "puntosCirculo" => 0];
 $coleccionJuegos[1] =  ["jugadorCruz"=> "Kevin" , "jugadorCirculo" => "Luana", "puntosCruz"=> 4, "puntosCirculo" => 0];
