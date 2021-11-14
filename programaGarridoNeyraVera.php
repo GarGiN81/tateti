@@ -56,17 +56,17 @@ function mostrarJuego ($coleccionJuegos){
  * @return int
  */
 //punto 6
-function primerJuegoGanador($coleccion, $nombreJugadorSolicitado) {
+function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
     //int $nroJuego, $cantElementosColeccion, $indiceGanador
     //boolean $juegoGanador
     $nroJuego=1;
     $juegoGanador=false;
-    $cantElementosColeccion= count($coleccion[$nombreJugadorSolicitado]);
+    $cantElementosColeccion= count($coleccionJuegos[$nombreJugadorSolicitado]);
     $indiceGanador=-1;
-    while ($coleccion[$nroJuego][$nombreJugadorSolicitado]<=$cantElementosColeccion && $juegoGanador=false ) {
-        if ($coleccion[$nroJuego][$nombreJugadorSolicitado]>0){
+    while ($coleccionJuegos[$nroJuego][$nombreJugadorSolicitado]<=$cantElementosColeccion && $juegoGanador=false ) {
+        if ($coleccionJuegos[$nroJuego][$nombreJugadorSolicitado]>0){
             $juegoGanador=true;
-            $indiceGanador=$coleccion[$nroJuego][$nombreJugadorSolicitado];
+            $indiceGanador=$coleccionJuegos[$nroJuego][$nombreJugadorSolicitado];
         }
         $nroJuego=$nroJuego+1;
     }
