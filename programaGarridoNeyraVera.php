@@ -15,7 +15,32 @@ include_once("tateti.php");
 /**************************************/
 /***** DEFINICION DE FUNCIONES ********/
 /**************************************/
+/**
+ * inicializa una estructura de datos con ejemplos de juegos y retorna una colección de juegos
+ * @param string $nombreX, $nombreO
+ * @param int $ptosX, $ptosO
+ * @return array coleccion de juegos
+ */
+//punto 1
+function cargarJuegos ($nombreX, $nombreO, $ptosX, $ptosO){
+//array $coleccionJuegos
+$coleccionJuegos[0] = ["jugadorCruz"=> "Maxi" , "jugadorCirculo" => "Juan", "puntosCruz"=> 5, "puntosCirculo" => 0];
+$coleccionJuegos[1] =  ["jugadorCruz"=> "Kevin" , "jugadorCirculo" => "Luana", "puntosCruz"=> 4, "puntosCirculo" => 0];
+$coleccionJuegos[2] =  ["jugadorCruz"=> "Luana" , "jugadorCirculo" => "Maxi", "puntosCruz"=> 0, "puntosCirculo" => 3];
+$coleccionJuegos[3] =  ["jugadorCruz"=> "Nico" , "jugadorCirculo" => "Maria", "puntosCruz"=> 1, "puntosCirculo" =>1];
+$coleccionJuegos[4] =  ["jugadorCruz"=> "Juan" , "jugadorCirculo" => "Marta", "puntosCruz"=> 0, "puntosCirculo" =>2];
+$coleccionJuegos[5] =  ["jugadorCruz"=> "Luana" , "jugadorCirculo" => "Victor", "puntosCruz"=> 1, "puntosCirculo" => 1];
+$coleccionJuegos[6] = ["jugadorCruz"=> "Leo" , "jugadorCirculo" => "Ciro", "puntosCruz"=> 2, "puntosCirculo" =>0];
+$coleccionJuegos[7] =  ["jugadorCruz"=> "Martin" , "jugadorCirculo" => "Fabi", "puntosCruz"=> 0, "puntosCirculo" => 2];
+$coleccionJuegos[8] =  ["jugadorCruz"=> "Nico" , "jugadorCirculo" => "Kevin", "puntosCruz"=> 1, "puntosCirculo" => 1];
+$coleccionJuegos[9] = ["jugadorCruz"=> "Maria" , "jugadorCirculo" => "Maxi", "puntosCruz"=> 3, "puntosCirculo" => 0];
+return ($coleccionJuegos);
+}
 
+/**
+ * 
+ */
+//punto 2
 
 /** Modulo que pide al usuario un numero entre el rango del menu, si el numero no es valido, vuelve a pedrilo. Retorna un numero valido
  * @return int
