@@ -37,9 +37,24 @@ return $coleccionJuegos;
 }
 
 /**
- * 
+ * Modulo que muestra las opciones del menú en la pantalla, le solicite al usuario una opción válida y retorne el número de la opción
+ * @return int
  */
+
 //punto 2
+function SeleccionarOpcion(){
+    // int $opcion
+    echo " (1) Jugar al tateti" . '\n';
+    echo " (2) Mostrar un juego" . '\n';
+    echo " (3) Mostrar el primer juego ganador" . '\n';
+    echo " (4) Mostrar el porcentaje de juegos ganados" . '\n';
+    echo " (5) Mostrar resumen de Jugador" . '\n';
+    echo " (6) Jugar al tateti" . '\n';
+    echo " (7) Salir" . '\n';
+    $opcion = solicitarOpcion();
+    return $opcion; 
+
+}
 
 /** Modulo que pide al usuario un numero entre el rango del menu, si el numero no es valido, vuelve a pedrilo. Retorna un numero valido
  * @return int
