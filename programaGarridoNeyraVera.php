@@ -49,6 +49,30 @@ function mostrarJuego ($coleccionJuegos){
 }
 
 
+/** Modulo que toma por parametro una coleccion de juegos y el nombre de un jugador, retorna indice del primer juego ganado por el jugador indicado
+ * si no gano  ningun juego, retorna -1
+ * @param array $coleccion
+ * @param string $nombreJugadorSolicitado
+ * @return int
+ */
+//punto 6
+function primerJuegoGanador($coleccion, $nombreJugadorSolicitado) {
+    //int $nroJuego, $cantElementosColeccion, $indiceGanador
+    //boolean $juegoGanador
+    $nroJuego=1;
+    $juegoGanador=false;
+    $cantElementosColeccion= count($coleccion[$nombreJugadorSolicitado]);
+    $indiceGanador=-1;
+    while ($coleccion[$nroJuego][$nombreJugadorSolicitado]<=$cantElementosColeccion && $juegoGanador=false ) {
+        if ($coleccion[$nroJuego][$nombreJugadorSolicitado]>0){
+            $juegoGanador=true;
+            $indiceGanador=$coleccion[$nroJuego][$nombreJugadorSolicitado];
+        }
+        $nroJuego=$nroJuego+1;
+    }
+    $indiceGanador=$nroJuego;
+    return ($indiceGanador);
+}
 
 
 
