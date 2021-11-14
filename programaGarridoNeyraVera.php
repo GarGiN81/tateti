@@ -18,7 +18,6 @@ include_once("tateti.php");
 
 
 /** Modulo que pide al usuario un numero entre el rango del menu, si el numero no es valido, vuelve a pedrilo. Retorna un numero valido
- * @param 
  * @return int
  */
 //punto 3
