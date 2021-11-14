@@ -63,10 +63,21 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
     $juegoGanador=false;
     $cantElementosColeccion= count($coleccionJuegos[$nombreJugadorSolicitado]);
     $indiceGanador=-1;
-    while ($coleccionJuegos[$nroJuego][$nombreJugadorSolicitado]<=$cantElementosColeccion && $juegoGanador=false ) {
-        if ($coleccionJuegos[$nroJuego][$nombreJugadorSolicitado]>0){
-            $juegoGanador=true;
-            $indiceGanador=$coleccionJuegos[$nroJuego][$nombreJugadorSolicitado];
+    $signoJugador="";
+    if ($coleccionJuegos[$nroJuego]["jugadorCruz"]==$nombreJugadorSolicitado){
+        $signoJugador="jugadorCruz";
+    }else {
+        $signoJugador="jugadorCirculo";
+    }
+    while ($coleccionJuegos[$nroJuego][$signoJugador]<=$cantElementosColeccion && $juegoGanador=false ) {
+        if ($coleccionJuegos[$nroJuego][$signoJugador]=="jugadorCruz"){
+            if ($coleccionJuegos[$nroJuego]["puntosCruz"]>0){
+                $juegoGanador=true;
+            }
+        }else {
+            if ($coleccionJuegos[$nroJuego]["puntosCirculo"]>0){
+                $juegoGanador=true;
+            }
         }
         $nroJuego=$nroJuego+1;
     }
