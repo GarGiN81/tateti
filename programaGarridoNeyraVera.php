@@ -42,7 +42,7 @@ return $coleccionJuegos;
  */
 
 //punto 2
-function SeleccionarOpcion(){
+function seleccionarOpcion(){
     // int $opcion
     echo " (1) Jugar al tateti" . '\n';
     echo " (2) Mostrar un juego" . '\n';
