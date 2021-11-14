@@ -34,7 +34,7 @@ $coleccionJuegos[6] = ["jugadorCruz"=> "Leo" , "jugadorCirculo" => "Ciro", "punt
 $coleccionJuegos[7] =  ["jugadorCruz"=> "Martin" , "jugadorCirculo" => "Fabi", "puntosCruz"=> 0, "puntosCirculo" => 2];
 $coleccionJuegos[8] =  ["jugadorCruz"=> "Nico" , "jugadorCirculo" => "Kevin", "puntosCruz"=> 1, "puntosCirculo" => 1];
 $coleccionJuegos[9] = ["jugadorCruz"=> "Maria" , "jugadorCirculo" => "Maxi", "puntosCruz"=> 3, "puntosCirculo" => 0];
-return ($coleccionJuegos);
+return $coleccionJuegos;
 }
 
 /**
