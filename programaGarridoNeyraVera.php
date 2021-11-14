@@ -17,6 +17,23 @@ include_once("tateti.php");
 /**************************************/
 
 
+/** Modulo que pide al usuario un numero entre el rango del menu, si el numero no es valido, vuelve a pedrilo. Retorna un numero valido
+ * @param 
+ * @return int
+ */
+//punto 3
+function solicitarOpcion (){
+    //int $opcionMenu 
+
+    echo "Ingrese una opcion del menu: ";
+    $opcionMenu=trim(fgets(STDIN));
+    if ($opcionMenu<1 && $opcionMenu>7){
+        echo "Error, debe ser un numero valido del menu de opciones ";
+        echo "Ingrese una opcion del menu: ";
+        $opcionMenu=trim(fgets(STDIN));
+    } 
+    return ($opcionMenu);
+}
 
 
 /**
