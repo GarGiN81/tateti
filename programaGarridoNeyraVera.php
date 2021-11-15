@@ -56,21 +56,17 @@ function seleccionarOpcion(){
 
 }
 
-/** Modulo que pide al usuario un numero entre el rango del menu, si el numero no es valido, vuelve a pedrilo. Retorna un numero valido
+//punto 3
+/** Modulo que pide al usuario un numero entre el rango del menu, si no es valido vuelve a pedirlo. Retorna un numero entero
  * @return int
  */
-//punto 3
-function solicitarOpcion (){
-    //int $opcionMenu 
-
-    echo "Ingrese una opcion del menu: ";
-    $opcionMenu=trim(fgets(STDIN));
-    if ($opcionMenu<1 && $opcionMenu>7){
-        echo "Error, debe ser un numero valido del menu de opciones ";
-        echo "Ingrese una opcion del menu: ";
-        $opcionMenu=trim(fgets(STDIN));
-    } 
-    return ($opcionMenu);
+function solicitarOpcion(){
+    //int $numeroOpcion, $min, $max
+    $min=1;
+    $max=7;
+    echo "Ingrese una numero entre la opcion " . $min. " y la opcion ".$max." : ";
+    $numeroOpcion=solicitarNumeroEntre($min, $max);
+    return $numeroOpcion;
 }
 
 
