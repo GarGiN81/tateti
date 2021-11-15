@@ -155,7 +155,7 @@ function ordenaNombreCirculo($coleccionJuegos){
     }
     asort($pibote);
     foreach ($pibote as $key => $val){
-       //echo "$key = $val \n";
+       
        print_r($coleccionJuegos[$key]);
     }
 
