@@ -136,17 +136,6 @@ function ingresarSimbolo (){
     }
     return $simbolo;
 }
-<<<<<<< HEAD
-/**
- * Modulo que compara los nombres de los jugadores circulos
- * @param array $a
- * @param array $b
- * @return int
- */
-function comparaNombreCirculo($a, $b) {
-    return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
-}
-=======
 
 // punto 9
 /** Modulo que toma por parametro una coleccion de juegos y retorna la cantidad de juegos ganados 
@@ -163,8 +152,15 @@ function cantidadJuegosGanadosColeccion ($coleccionJuegos){
     }
     return $cantJuegosGanados;
 }
-
->>>>>>> f760fe80f435c752a721f47ff8f0eda62cc17466
+/**
+ * Modulo que compara los nombres de los jugadores circulos
+ * @param array $a
+ * @param array $b
+ * @return int
+ */
+function comparaNombreCirculo($a, $b) {
+    return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
+}
 /**
  * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
  * @param array $coleccionJuegos
