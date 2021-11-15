@@ -137,6 +137,22 @@ function ingresarSimbolo (){
     return $simbolo;
 }
 
+// punto 9
+/** Modulo que toma por parametro una coleccion de juegos y retorna la cantidad de juegos ganados 
+ * @param array $coleccionJuegos
+ * @return int 
+ */
+function cantidadJuegosGanadosColeccion ($coleccionJuegos){
+    //int $cantJuegosGanados
+    $cantJuegosGanados=0;
+    foreach ($coleccionJuegos as $indice => $datos) {
+        if ($coleccionJuegos[$indice]["puntosCruz"] !== $coleccionJuegos[$indice]["puntosCirculo"]){
+            $cantJuegosGanados++;
+        }
+    }
+    return $cantJuegosGanados;
+}
+
 /**
  * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
  * @param array $coleccionJuegos
