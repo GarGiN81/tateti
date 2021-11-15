@@ -140,25 +140,23 @@ function ingresarSimbolo (){
     }
     return $simbolo;
 }
-
+/**
+ * Modulo que compara los nombres de los jugadores circulos
+ * @param array $a
+ * @param array $b
+ * @return int
+ */
+function comparaNombreCirculo($a, $b) {
+    return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
+}
 /**
  * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
  * @param array $coleccionJuegos
  */
 //punto 11
 function ordenaNombreCirculo($coleccionJuegos){
-    //array $pibote int $n, $i
-    $pibote = [];
-    $n = count ($coleccionJuegos);
-    for($i=0;$i<$n;$i++){
-    $pibote [$i]= $coleccionJuegos[$i]["jugadorCirculo"];
-    }
-    asort($pibote);
-    foreach ($pibote as $key => $val){
-       
-       print_r($coleccionJuegos[$key]);
-    }
-
+    uasort($coleccionJuegos, 'comparaNombreCirculo');
+    print_r($coleccionJuegos);
 }
 
 
