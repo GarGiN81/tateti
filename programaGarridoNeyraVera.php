@@ -141,6 +141,26 @@ function ingresarSimbolo (){
     return $simbolo;
 }
 
+/**
+ * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
+ * @param array $coleccionJuegos
+ */
+//punto 11
+function ordenaNombreCirculo($coleccionJuegos){
+    //array $pibote int $n, $i
+    $pibote = [];
+    $n = count ($coleccionJuegos);
+    for($i=0;$i<$n;$i++){
+    $pibote [$i]= $coleccionJuegos[$i]["jugadorCirculo"];
+    }
+    asort($pibote);
+    foreach ($pibote as $key => $val){
+       //echo "$key = $val \n";
+       print_r($coleccionJuegos[$key]);
+    }
+
+}
+
 
 /**************************************/
 /*********** PROGRAMA PRINCIPAL *******/
