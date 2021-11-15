@@ -87,6 +87,19 @@ function mostrarJuego ($coleccionJuegos){
     "JugadorO: ".$coleccionJuegos[$nroJuego]["jugadorCirculo"]." Obtuvo: ".$coleccionJuegos[$nroJuego]["puntosCirculo"]." puntos .\n";
 }
 
+/**
+ * Modulo que recibe un coleccion de juegos y un juego, y retorna la coleccion modificada al agregarle ese juego
+ * @param array $coleccionJuegos
+ * @param array $unJuego
+ * @return array
+ */
+//punto 5
+function agregarJuego ($coleccionJuegos,$unJuego){
+    //int $largoArreglo
+    $largoArreglo = count($coleccionJuegos);
+    $coleccionJuegos [$largoArreglo]= $unJuego;
+    return $coleccionJuegos;
+}
 
 /** Modulo que toma por parametro una coleccion de juegos y el nombre de un jugador, retorna indice del primer juego ganado por el jugador indicado
  * si no gano  ningun juego, retorna -1
