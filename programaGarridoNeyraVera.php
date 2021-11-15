@@ -126,6 +126,21 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
     return $indiceGanador;
         
 }
+/**
+ * Modulo sin parametro formales que solicite al usuario un símbolo X o O, y retorne el símbolo elegido
+ * @return string
+ */
+// punto 8
+function ingresarSimbolo (){
+    //string $simbolo
+    echo "Ingrese un simbolo (x/o):";
+    $simbolo = trim(fgets(STDIN));
+    while(strtolower($simbolo)!= "x" && strtolower($simbolo) != "o"){
+        echo "Ingrese un simbolo valido (x/o):";
+        $simbolo = trim(fgets(STDIN));
+    }
+    return $simbolo;
+}
 
 
 /**************************************/
