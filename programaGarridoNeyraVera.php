@@ -56,21 +56,17 @@ function seleccionarOpcion(){
 
 }
 
-/** Modulo que pide al usuario un numero entre el rango del menu, si el numero no es valido, vuelve a pedrilo. Retorna un numero valido
+//punto 3
+/** Modulo que pide al usuario un numero entre el rango del menu, si no es valido vuelve a pedirlo. Retorna un numero entero
  * @return int
  */
-//punto 3
-function solicitarOpcion (){
-    //int $opcionMenu 
-
-    echo "Ingrese una opcion del menu: ";
-    $opcionMenu=trim(fgets(STDIN));
-    if ($opcionMenu<1 && $opcionMenu>7){
-        echo "Error, debe ser un numero valido del menu de opciones ";
-        echo "Ingrese una opcion del menu: ";
-        $opcionMenu=trim(fgets(STDIN));
-    } 
-    return ($opcionMenu);
+function solicitarOpcion(){
+    //int $numeroOpcion, $min, $max
+    $min=1;
+    $max=7;
+    echo "Ingrese una numero entre la opcion " . $min. " y la opcion ".$max." : ";
+    $numeroOpcion=solicitarNumeroEntre($min, $max);
+    return $numeroOpcion;
 }
 
 
@@ -140,6 +136,7 @@ function ingresarSimbolo (){
     }
     return $simbolo;
 }
+<<<<<<< HEAD
 /**
  * Modulo que compara los nombres de los jugadores circulos
  * @param array $a
@@ -149,6 +146,25 @@ function ingresarSimbolo (){
 function comparaNombreCirculo($a, $b) {
     return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
 }
+=======
+
+// punto 9
+/** Modulo que toma por parametro una coleccion de juegos y retorna la cantidad de juegos ganados 
+ * @param array $coleccionJuegos
+ * @return int 
+ */
+function cantidadJuegosGanadosColeccion ($coleccionJuegos){
+    //int $cantJuegosGanados
+    $cantJuegosGanados=0;
+    foreach ($coleccionJuegos as $indice => $datos) {
+        if ($coleccionJuegos[$indice]["puntosCruz"] !== $coleccionJuegos[$indice]["puntosCirculo"]){
+            $cantJuegosGanados++;
+        }
+    }
+    return $cantJuegosGanados;
+}
+
+>>>>>>> f760fe80f435c752a721f47ff8f0eda62cc17466
 /**
  * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
  * @param array $coleccionJuegos
