@@ -44,13 +44,13 @@ return $coleccionJuegos;
 //punto 2
 function seleccionarOpcion(){
     // int $opcion
-    echo " (1) Jugar al tateti" . '\n';
-    echo " (2) Mostrar un juego" . '\n';
-    echo " (3) Mostrar el primer juego ganador" . '\n';
-    echo " (4) Mostrar el porcentaje de juegos ganados" . '\n';
-    echo " (5) Mostrar resumen de Jugador" . '\n';
-    echo " (6) Jugar al tateti" . '\n';
-    echo " (7) Salir" . '\n';
+    echo " (1) Jugar al tateti \n";
+    echo " (2) Mostrar un juego \n";
+    echo " (3) Mostrar el primer juego ganador \n" ;
+    echo " (4) Mostrar el porcentaje de juegos ganados \n";
+    echo " (5) Mostrar resumen de Jugador \n";
+    echo " (6) Jugar al tateti \n";
+    echo " (7) Salir \n";
     $opcion = solicitarOpcion();
     return $opcion; 
 
@@ -174,7 +174,7 @@ function ordenaNombreCirculo($coleccionJuegos){
 
 //Proceso:
 
-$juego = jugar();
+//$juego = jugar();
 //print_r($juego);
 //imprimirResultado($juego);
 
