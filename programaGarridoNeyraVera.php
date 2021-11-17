@@ -199,6 +199,7 @@ echo "Ganó: ".$resumenJugador["juegosGanados"]." juegos.\n";
 echo "Perdió: ".$resumenJugador["juegosPerdidos"]." juegos.\n";
 echo "Empató: ".$resumenJugador["juegosEmpatados"]." juegos.\n";
 echo "Total de puntos acumulados: ".$resumenJugador["puntosAcumulados"]." puntos.\n";
+echo"**************************************.\n";
 }
 return $resumenJugador;
 }
