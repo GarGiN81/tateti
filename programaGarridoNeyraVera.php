@@ -135,6 +135,11 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
         }
         $nroJuego ++;
         }
+        foreach ($coleccionJuegos as $indice => $datos ) {
+        if ($coleccionJuegos[$indice]["jugadorCruz"]!== $nombreJugadorSolicitado && $coleccionJuegos[$indice]["jugadorCirculo"]!== $nombreJugadorSolicitado) {
+            $indiceGanador=-2;
+        }
+         }
     return $indiceGanador;
         
 }
