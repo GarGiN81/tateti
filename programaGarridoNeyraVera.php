@@ -382,16 +382,16 @@ do {
             $nombreJugador = strtoupper(trim(fgets(STDIN)));
             $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
             if($indiceGanador==-2){
+                
                 echo"**************************************.\n";
-                echo"\n";
                 echo "El nombre ingresado no corresponde a un jugador.\n";
-                echo"\n";
                 echo"**************************************.\n";
             }else{
                 $arregloResumen = historialJugador($arregloJuegos,$nombreJugador);
                 echo"**************************************.\n";
-                echo"\n";
+                
                 echo "jugador: ". $arregloResumen["nombre"] .".\n";
+                echo"\n";
                 echo "Ganó: ".$arregloResumen["juegosGanados"]." juegos.\n";
                 echo "Perdió: ".$arregloResumen["juegosPerdidos"]." juegos.\n";
                 echo "Empató: ".$arregloResumen["juegosEmpatados"]." juegos.\n";
