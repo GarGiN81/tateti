@@ -126,6 +126,68 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
         
 }
 
+/**
+ * Función que dada la colección de juegos y el nombre de un jugador, retorna el resumen del jugador
+ * @param array $arrayColeccionJuegos
+ * @param string $nombreIngresado
+ * @return array $resumenJugador
+ */
+//punto 7
+
+function historialJugador($arrayColeccionJuegos, $nombreIngresado){
+    $ganados=0;
+    $puntajeTotal=0;
+    $empatados=0;
+    $perdidos=0;
+    $noExiste=0;
+    
+    $resumenJugador=[];
+
+    for ($numeroJuego=0;$numeroJuego<count($arrayColeccionJuegos);$numeroJuego++){
+        if ($arrayColeccionJuegos[$numeroJuego]["jugadorCruz"]==$nombreIngresado){
+            if($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]>$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
+                $ganados=$ganados+1;
+                $puntajeTotal=$puntajeTotal+$arrayColeccionJuegos[$numeroJuego]["puntosCruz"];
+            }elseif($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]=$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
+                $empatados=$empatados+1;
+                $puntajeTotal=$puntajeTotal+1;
+            }else{
+                $perdidos=$perdidos+1;
+            }
+        }elseif($arrayColeccionJuegos[$numeroJuego]["jugadorCirculo"]==$nombreIngresado){
+            if ($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]<$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
+                $ganados=$ganados+1;
+                $puntajeTotal=$puntajeTotal+$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"];
+            }elseif($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]=$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
+                $empatados=$empatados+1;
+                $puntajeTotal=$puntajeTotal+1;
+            }else{
+                $perdidos=$perdidos+1;
+                }
+        }elseif($arrayColeccionJuegos[$numeroJuego]["jugadorCruz"]!=$nombreIngresado&&$arrayColeccionJuegos[$numeroJuego]["jugadorCirculo"]!=$nombreIngresado){
+            $noExiste=$noExiste+1;
+            
+        }
+    }
+$resumenJugador["nombre"]=$nombreIngresado;
+$resumenJugador["juegosGanados"]=$ganados;
+$resumenJugador["juegosEmpatados"]=$empatados;
+$resumenJugador["juegosPerdidos"]=$perdidos;
+$resumenJugador["puntosAcumulados"]=$puntajeTotal;
+echo"**************************************.\n";
+if($noExiste==count($arrayColeccionJuegos)){
+    echo "El nombre ingresado no corresponde a un jugador.\n";
+
+}else{
+echo "jugador: ". $resumenJugador["nombre"] .".\n";
+
+echo "Ganó: ".$resumenJugador["juegosGanados"]." juegos.\n";
+echo "Perdió: ".$resumenJugador["juegosPerdidos"]." juegos.\n";
+echo "Empató: ".$resumenJugador["juegosEmpatados"]." juegos.\n";
+echo "Total de puntos acumulados: ".$resumenJugador["puntosAcumulados"]." puntos.\n";
+}
+return $resumenJugador;
+}
 
 /**************************************/
 /*********** PROGRAMA PRINCIPAL *******/
