@@ -131,6 +131,7 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
 //punto 7
 
 function historialJugador($arrayColeccionJuegos, $nombreIngresado){
+    //int $ganados, $puntajeTotal, $empatados, $perdidos, $noExiste
     $ganados=0;
     $puntajeTotal=0;
     $empatados=0;
