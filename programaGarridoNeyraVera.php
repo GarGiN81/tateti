@@ -236,7 +236,6 @@ function comparaNombreCirculo($a, $b) {
  * @param string $simnoloXo
  * @return int
  */
-
 //punto 10
 function ganadosSimbolo($juegosTotales,$simboloXo){
     $jugadorX="X";
@@ -257,6 +256,28 @@ function ganadosSimbolo($juegosTotales,$simboloXo){
     }
     return ($ganadosXo);
 }
+
+/**
+ * Muestra el procentaje de juegos ganados, correspondiente al símbolo ingresado por usuario
+ * @param array $totalJuegos
+ * @param string $simbolOx
+ * @return float
+ */
+//complemento opcion (4
+function porcentajeSimboloG($totalJuegos,$simbolOx){
+    $ganadosX=ganadosSimbolo($totalJuegos,"X");
+    $ganadosO=ganadosSimbolo($totalJuegos,"O");
+    $totalGanados=$ganadosX+$ganadosO;
+    $porcentajeGanado=0;
+    if($simbolOx=="X"){
+        $porcentajeGanado=$ganadosX*100/$totalGanados;
+    }elseif($simbolOx=="O"){
+        $porcentajeGanado=$ganadosO*100/$totalGanados;
+    }
+return $porcentajeGanado; 
+
+}
+
 
 /**
  * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
