@@ -268,6 +268,8 @@ function ganadosSimbolo($juegosTotales,$simboloXo){
  * @return float
  */
 //complemento opcion (4
+//int $ganadosX, $ganadosO, $totalGanados
+//float $porcentajeGanado
 function porcentajeSimboloG($totalJuegos,$simbolOx){
     $ganadosX=ganadosSimbolo($totalJuegos,"X");
     $ganadosO=ganadosSimbolo($totalJuegos,"O");
