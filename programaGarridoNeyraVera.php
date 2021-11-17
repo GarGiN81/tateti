@@ -121,55 +121,6 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
     return $indiceGanador;
         
 }
-/**
- * Modulo sin parametro formales que solicite al usuario un símbolo X o O, y retorne el símbolo elegido
- * @return string
- */
-// punto 8
-function ingresarSimbolo (){
-    //string $simbolo
-    echo "Ingrese un simbolo (x/o):";
-    $simbolo = trim(fgets(STDIN));
-    while(strtolower($simbolo)!= "x" && strtolower($simbolo) != "o"){
-        echo "Ingrese un simbolo valido (x/o):";
-        $simbolo = trim(fgets(STDIN));
-    }
-    return $simbolo;
-}
-
-// punto 9
-/** Modulo que toma por parametro una coleccion de juegos y retorna la cantidad de juegos ganados 
- * @param array $coleccionJuegos
- * @return int 
- */
-function cantidadJuegosGanadosColeccion ($coleccionJuegos){
-    //int $cantJuegosGanados
-    $cantJuegosGanados=0;
-    foreach ($coleccionJuegos as $indice => $datos) {
-        if ($coleccionJuegos[$indice]["puntosCruz"] !== $coleccionJuegos[$indice]["puntosCirculo"]){
-            $cantJuegosGanados++;
-        }
-    }
-    return $cantJuegosGanados;
-}
-/**
- * Modulo que compara los nombres de los jugadores circulos
- * @param array $a
- * @param array $b
- * @return int
- */
-function comparaNombreCirculo($a, $b) {
-    return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
-}
-/**
- * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
- * @param array $coleccionJuegos
- */
-//punto 11
-function ordenaNombreCirculo($coleccionJuegos){
-    uasort($coleccionJuegos, 'comparaNombreCirculo');
-    print_r($coleccionJuegos);
-}
 
 /**
  * Función que dada la colección de juegos y el nombre de un jugador, retorna el resumen del jugador
@@ -233,6 +184,58 @@ echo "Total de puntos acumulados: ".$resumenJugador["puntosAcumulados"]." puntos
 }
 return $resumenJugador;
 }
+
+/**
+ * Modulo sin parametro formales que solicite al usuario un símbolo X o O, y retorne el símbolo elegido
+ * @return string
+ */
+// punto 8
+function ingresarSimbolo (){
+    //string $simbolo
+    echo "Ingrese un simbolo (x/o):";
+    $simbolo = trim(fgets(STDIN));
+    while(strtolower($simbolo)!= "x" && strtolower($simbolo) != "o"){
+        echo "Ingrese un simbolo valido (x/o):";
+        $simbolo = trim(fgets(STDIN));
+    }
+    return $simbolo;
+}
+
+// punto 9
+/** Modulo que toma por parametro una coleccion de juegos y retorna la cantidad de juegos ganados 
+ * @param array $coleccionJuegos
+ * @return int 
+ */
+function cantidadJuegosGanadosColeccion ($coleccionJuegos){
+    //int $cantJuegosGanados
+    $cantJuegosGanados=0;
+    foreach ($coleccionJuegos as $indice => $datos) {
+        if ($coleccionJuegos[$indice]["puntosCruz"] !== $coleccionJuegos[$indice]["puntosCirculo"]){
+            $cantJuegosGanados++;
+        }
+    }
+    return $cantJuegosGanados;
+}
+/**
+ * Modulo que compara los nombres de los jugadores circulos
+ * @param array $a
+ * @param array $b
+ * @return int
+ */
+function comparaNombreCirculo($a, $b) {
+    return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
+}
+/**
+ * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
+ * @param array $coleccionJuegos
+ */
+//punto 11
+function ordenaNombreCirculo($coleccionJuegos){
+    uasort($coleccionJuegos, 'comparaNombreCirculo');
+    print_r($coleccionJuegos);
+}
+
+
 
 /**************************************/
 /*********** PROGRAMA PRINCIPAL *******/
