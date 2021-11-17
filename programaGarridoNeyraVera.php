@@ -350,8 +350,7 @@ do {
             $arregloJuegos = agregarJuego($arregloJuegos,$juego);
             break;
         case 2: 
-            //completar qué secuencia de pasos ejecutar si el usuario elige la opción 2
-
+            mostrarJuego($arregloJuegos);
             break;
         case 3: 
             //completar qué secuencia de pasos ejecutar si el usuario elige la opción 3
