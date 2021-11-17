@@ -9,7 +9,7 @@ include_once("tateti.php");
 /* ... COMPLETAR ... */
 /*Vera Guillermo, Legajo FAI-3602, Tecnicatura Universitaria en Desarrollo Web, guillermo.vera@est.fi.uncoma.edu.ar, Github: guilleV12*/
 /**Garrido Gisela, Legajo: FAI-3463, Tecnicatura Universitaria en Desarrollo Web, gisela.garrido@est.fi.uncoma.edu.ar, Github: GarGiN81*/
-
+/*Neyra Gustavo, Legajo FAI-2020, Tecnicatura Universitaria en Desarrollo Web, gustavo.neyra@est.fi.uncoma.edu.ar, Github: GENEY11*/
 
 
 
@@ -24,16 +24,16 @@ include_once("tateti.php");
 //punto 1
 function cargarJuegos (){
 //array $coleccionJuegos
-$coleccionJuegos[0] = ["jugadorCruz"=> "Maxi" , "jugadorCirculo" => "Juan", "puntosCruz"=> 5, "puntosCirculo" => 0];
-$coleccionJuegos[1] =  ["jugadorCruz"=> "Kevin" , "jugadorCirculo" => "Luana", "puntosCruz"=> 4, "puntosCirculo" => 0];
-$coleccionJuegos[2] =  ["jugadorCruz"=> "Luana" , "jugadorCirculo" => "Maxi", "puntosCruz"=> 0, "puntosCirculo" => 3];
-$coleccionJuegos[3] =  ["jugadorCruz"=> "Nico" , "jugadorCirculo" => "Maria", "puntosCruz"=> 1, "puntosCirculo" =>1];
-$coleccionJuegos[4] =  ["jugadorCruz"=> "Juan" , "jugadorCirculo" => "Marta", "puntosCruz"=> 0, "puntosCirculo" =>2];
-$coleccionJuegos[5] =  ["jugadorCruz"=> "Luana" , "jugadorCirculo" => "Victor", "puntosCruz"=> 1, "puntosCirculo" => 1];
-$coleccionJuegos[6] = ["jugadorCruz"=> "Leo" , "jugadorCirculo" => "Ciro", "puntosCruz"=> 2, "puntosCirculo" =>0];
-$coleccionJuegos[7] =  ["jugadorCruz"=> "Martin" , "jugadorCirculo" => "Fabi", "puntosCruz"=> 0, "puntosCirculo" => 2];
-$coleccionJuegos[8] =  ["jugadorCruz"=> "Nico" , "jugadorCirculo" => "Kevin", "puntosCruz"=> 1, "puntosCirculo" => 1];
-$coleccionJuegos[9] = ["jugadorCruz"=> "Maria" , "jugadorCirculo" => "Maxi", "puntosCruz"=> 3, "puntosCirculo" => 0];
+$coleccionJuegos[0] = ["jugadorCruz"=> "MAXI" , "jugadorCirculo" => "JUAN", "puntosCruz"=> 5, "puntosCirculo" => 0];
+$coleccionJuegos[1] =  ["jugadorCruz"=> "KEVIN" , "jugadorCirculo" => "LUANA", "puntosCruz"=> 4, "puntosCirculo" => 0];
+$coleccionJuegos[2] =  ["jugadorCruz"=> "LUANA" , "jugadorCirculo" => "MAXI", "puntosCruz"=> 0, "puntosCirculo" => 3];
+$coleccionJuegos[3] =  ["jugadorCruz"=> "NICO" , "jugadorCirculo" => "MARIA", "puntosCruz"=> 1, "puntosCirculo" =>1];
+$coleccionJuegos[4] =  ["jugadorCruz"=> "JUAN" , "jugadorCirculo" => "MARTA", "puntosCruz"=> 0, "puntosCirculo" =>2];
+$coleccionJuegos[5] =  ["jugadorCruz"=> "LUANA" , "jugadorCirculo" => "VICTOR", "puntosCruz"=> 1, "puntosCirculo" => 1];
+$coleccionJuegos[6] = ["jugadorCruz"=> "LEO" , "jugadorCirculo" => "CIRO", "puntosCruz"=> 2, "puntosCirculo" =>0];
+$coleccionJuegos[7] =  ["jugadorCruz"=> "MARTIN" , "jugadorCirculo" => "FABI", "puntosCruz"=> 0, "puntosCirculo" => 2];
+$coleccionJuegos[8] =  ["jugadorCruz"=> "NICO" , "jugadorCirculo" => "KEVIN", "puntosCruz"=> 1, "puntosCirculo" => 1];
+$coleccionJuegos[9] = ["jugadorCruz"=> "MARIA" , "jugadorCirculo" => "MAXI", "puntosCruz"=> 3, "puntosCirculo" => 0];;
 return $coleccionJuegos;
 }
 
