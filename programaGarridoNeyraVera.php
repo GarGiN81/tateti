@@ -77,11 +77,27 @@ function solicitarOpcion(){
 */
 //Punto 4)
 function mostrarJuego ($coleccionJuegos){ 
-    //int $nroJuego
+    //int $nroJuego, $cantidadDeJuegos
+    //string $resultado
+    $resultado = "";
+    $cantidadDeJuegos = count($coleccionJuegos);
 	echo "Ingrese un número de juego: ";
-	$nroJuego=trim(fgets(STDIN));
-	echo "Jugador X:".$coleccionJuegos[$nroJuego]["jugadorCruz"]." Obtuvo: ".$coleccionJuegos[$nroJuego]["puntosCruz"]."puntos .\n".
-    "JugadorO: ".$coleccionJuegos[$nroJuego]["jugadorCirculo"]." Obtuvo: ".$coleccionJuegos[$nroJuego]["puntosCirculo"]." puntos .\n";
+    $nroJuego = solicitarNumeroEntre(1,$cantidadDeJuegos);
+    $nroJuego = $nroJuego - 1;
+    if($coleccionJuegos[$nroJuego]["puntosCruz"]!=$coleccionJuegos[$nroJuego]["puntosCirculo"]){
+        if($coleccionJuegos[$nroJuego]["puntosCruz"]>$coleccionJuegos[$nroJuego]["puntosCirculo"]){
+            $resultado = "gano X";
+        }else{
+            $resultado = "gano O";
+        }
+    }else{
+        $resultado = "empate";
+    }
+    echo "**************************************** \n";
+    echo "Juego TATETI: ". $nroJuego + 1 . " (" . $resultado . ") \n";
+	echo "Jugador X: ".$coleccionJuegos[$nroJuego]["jugadorCruz"]." Obtuvo: ".$coleccionJuegos[$nroJuego]["puntosCruz"]." puntos .\n";
+    echo "Jugador O: ".$coleccionJuegos[$nroJuego]["jugadorCirculo"]." Obtuvo: ".$coleccionJuegos[$nroJuego]["puntosCirculo"]." puntos .\n";
+    echo "**************************************** \n";
 }
 
 /**
