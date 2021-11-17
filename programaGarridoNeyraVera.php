@@ -127,7 +127,7 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
     $nroJuego=0;
     $juegoGanador=false;
     $cantElementosColeccion= count($coleccionJuegos);
-    $indiceGanador=-1;
+    $indiceGanador=-2;
     while ($nroJuego<$cantElementosColeccion && $juegoGanador != true){
         if (($coleccionJuegos[$nroJuego]["jugadorCruz"] ==$nombreJugadorSolicitado&&$coleccionJuegos[$nroJuego]["puntosCruz"]>$coleccionJuegos[$nroJuego]["puntosCirculo"])||($coleccionJuegos[$nroJuego]["jugadorCirculo"] ==$nombreJugadorSolicitado && $coleccionJuegos[$nroJuego]["puntosCirculo"]>$coleccionJuegos[$nroJuego]["puntosCruz"])){
         $indiceGanador = $nroJuego;
@@ -135,14 +135,19 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
         }
         $nroJuego ++;
         }
-        foreach ($coleccionJuegos as $indice => $datos ) {
-        if ($coleccionJuegos[$indice]["jugadorCruz"]!== $nombreJugadorSolicitado && $coleccionJuegos[$indice]["jugadorCirculo"]!== $nombreJugadorSolicitado) {
-            $indiceGanador=-2;
-        }
-         }
+        if ($indiceGanador == -2){
+          $nroJuego=0;
+          $banderaNombre=false;
+               while ($nroJuego < $cantElementosColeccion && $banderaNombre==false) {
+                  if ($coleccionJuegos[$nroJuego]["jugadorCruz"]==$nombreJugadorSolicitado || $coleccionJuegos[$nroJuego]["jugadorCirculo"]==$nombreJugadorSolicitado){
+                      $banderaNombre=true;
+                      $indiceGanador=-1;
+               }
+                  $nroJuego++;
+          }
+          }
     return $indiceGanador;
-        
-}
+      }
 
 /**
  * Función que dada la colección de juegos y el nombre de un jugador, retorna el resumen del jugador
