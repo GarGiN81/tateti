@@ -124,7 +124,7 @@ function agregarJuego ($coleccionJuegos,$unJuego){
 function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
     //int $nroJuego, $cantElementosColeccion, $indiceGanador
     //boolean $juegoGanador
-    $nroJuego=1;
+    $nroJuego=0;
     $juegoGanador=false;
     $cantElementosColeccion= count($coleccionJuegos);
     $indiceGanador=-1;
@@ -234,19 +234,6 @@ function cantidadJuegosGanadosColeccion ($coleccionJuegos){
     }
     return $cantJuegosGanados;
 }
-/**
- * Modulo que compara los nombres de los jugadores circulos
- * @param array $a
- * @param array $b
- * @return int
- */
-function comparaNombreCirculo($a, $b) {
-    return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
-}
-/**
- * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
- * @param array $coleccionJuegos
- */
 
 /**
  * Modulo que dada una colección de juegos y un símbolo, recibidos por parámetros, retorna la cantidad de juegos ganados (por símbolo)
@@ -299,7 +286,15 @@ function porcentajeSimboloG($totalJuegos,$simbolOx){
 return $porcentajeGanado; 
 
 }
-
+/**
+ * Modulo que compara los nombres de los jugadores circulos
+ * @param array $a
+ * @param array $b
+ * @return int
+ */
+function comparaNombreCirculo($a, $b) {
+    return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
+}
 
 /**
  * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
