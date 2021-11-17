@@ -229,6 +229,36 @@ function comparaNombreCirculo($a, $b) {
  * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
  * @param array $coleccionJuegos
  */
+
+/**
+ * Modulo que dada una colección de juegos y un símbolo, recibidos por parámetros, retorna la cantidad de juegos ganados (por símbolo)
+ * @param array $juegosTotales
+ * @param string $simnoloXo
+ * @return int
+ */
+
+//punto 10
+function ganadosSimbolo($juegosTotales,$simboloXo){
+    $jugadorX="X";
+    $jugadorO="O";
+    $ganadosXo=0;
+    
+    for ($nroJuego=0;$nroJuego<count($juegosTotales);$nroJuego++){
+      if($jugadorX==$simboloXo){
+        if ($juegosTotales[$nroJuego]["puntosCruz"]>$juegosTotales[$nroJuego]["puntosCirculo"]){
+            $ganadosXo=$ganadosXo+1;
+        }
+      }elseif($jugadorO==$simboloXo){
+            if ($juegosTotales[$nroJuego]["puntosCruz"]<$juegosTotales[$nroJuego]["puntosCirculo"]){
+                $ganadosXo=$ganadosXo+1;
+            }
+         }
+        
+    }
+    return ($ganadosXo);
+}
+
+
 //punto 11
 function ordenaNombreCirculo($coleccionJuegos){
     uasort($coleccionJuegos, 'comparaNombreCirculo');
