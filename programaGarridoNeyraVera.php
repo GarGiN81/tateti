@@ -240,6 +240,8 @@ function comparaNombreCirculo($a, $b) {
  */
 //punto 10
 function ganadosSimbolo($juegosTotales,$simboloXo){
+    //string $jugadorX,$jugadorO
+    //int $ganadosXo
     $jugadorX="X";
     $jugadorO="O";
     $ganadosXo=0;
