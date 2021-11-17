@@ -359,20 +359,22 @@ do {
             mostrarJuego($arregloJuegos);
             break;
         case 3: 
-             //verificar que el jugador existe y si no existe, mostrar que el jugador no jugo ningun juego
-             echo "Ingrese nombre del jugador ";
-             $nombreJugador = strtoupper(trim(fgets(STDIN)));
-             $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
-             if($indiceGanador==-1){
-                 echo "El jugador " . $nombreJugador . " no gano ningun juego. \n";
-             }else{
-                 $signoJugador = verTipo($arregloJuegos,$indiceGanador,$nombreJugador);
-                 echo "**************************************** \n";
-                 echo "Juego TATETI: ". $indiceGanador + 1 . " ( gano " . $signoJugador . ") \n";
-                 echo "Jugador X: ".$arregloJuegos[$indiceGanador]["jugadorCruz"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCruz"]." puntos .\n";
-                 echo "Jugador O: ".$arregloJuegos[$indiceGanador]["jugadorCirculo"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCirculo"]." puntos .\n";
-                 echo "**************************************** \n";
-             }
+                //verificar que el jugador existe y si no existe, mostrar que el jugador no jugo ningun juego
+                echo "Ingrese nombre del jugador ";
+                $nombreJugador = strtoupper(trim(fgets(STDIN)));
+                $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
+                if($indiceGanador==-1){
+                    echo "El jugador " . $nombreJugador . " no gano ningun juego. \n";
+                }elseif ($indiceGanador==-2) {
+                    echo " El jugador ".$nombreJugador. " no jugo ningun juego. \n";
+                }else{
+                    $signoJugador = verTipo($arregloJuegos,$indiceGanador,$nombreJugador);
+                    echo "**************************************** \n";
+                    echo "Juego TATETI: ". $indiceGanador + 1 . " ( gano " . $signoJugador . ") \n";
+                    echo "Jugador X: ".$arregloJuegos[$indiceGanador]["jugadorCruz"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCruz"]." puntos .\n";
+                    echo "Jugador O: ".$arregloJuegos[$indiceGanador]["jugadorCirculo"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCirculo"]." puntos .\n";
+                    echo "**************************************** \n";
+                }
             break;
         case 4:
 
