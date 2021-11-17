@@ -8,6 +8,7 @@ include_once("tateti.php");
 /* Apellido, Nombre. Legajo. Carrera. mail. Usuario Github */
 /* ... COMPLETAR ... */
 /*Vera Guillermo, Legajo FAI-3602, Tecnicatura Universitaria en Desarrollo Web, guillermo.vera@est.fi.uncoma.edu.ar, Github: guilleV12*/
+/**Garrido Gisela, Legajo: FAI-3463, Tecnicatura Universitaria en Desarrollo Web, gisela.garrido@est.fi.uncoma.edu.ar, Github: GarGiN81*/
 
 
 
