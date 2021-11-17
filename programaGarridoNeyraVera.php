@@ -382,7 +382,9 @@ do {
             $nombreJugador = strtoupper(trim(fgets(STDIN)));
             $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
             if($indiceGanador==-2){
+                echo"**************************************.\n";
                 echo "El nombre ingresado no corresponde a un jugador.\n";
+                echo"**************************************.\n";
             }else{
                 $arregloResumen = historialJugador($arregloJuegos,$nombreJugador);
                 echo"**************************************.\n";
