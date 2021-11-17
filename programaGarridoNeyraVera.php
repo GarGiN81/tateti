@@ -115,7 +115,7 @@ function agregarJuego ($coleccionJuegos,$unJuego){
 }
 
 /** Modulo que toma por parametro una coleccion de juegos y el nombre de un jugador, retorna indice del primer juego ganado por el jugador indicado
- * si no gano  ningun juego, retorna -1
+ * si no gano  ningun juego, retorna -1 o -2 si no esta en la coleccion
  * @param array $coleccion
  * @param string $nombreJugadorSolicitado
  * @return int
