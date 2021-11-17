@@ -362,7 +362,7 @@ do {
             if($indiceGanador==-1){
                 echo "El jugador " . $nombreJugador . " no gano ningun juego. \n";
             }elseif ($indiceGanador==-2) {
-                echo " El jugador ".$nombreJugador. " no jugo ningun juego. \n";
+                echo " El nombre ".$nombreJugador. " no corresponde a ningun jugador. \n";
             }else{
                 $signoJugador = verTipo($arregloJuegos,$indiceGanador,$nombreJugador);
                 echo "**************************************** \n";
