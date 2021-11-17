@@ -338,7 +338,7 @@ function verTipo ($coleccionJuegos,$indice,$nombre){
 /**************************************/
 
 //Declaración de variables:
-// array $arregloJuegos
+// array $arregloJuegos, $juego
 // string $nombreJugador, $signoJugador, $simboloXoO
 // int $indiceGanador, $opcion
 // float $porcentaje
@@ -351,6 +351,7 @@ $indiceGanador = 0;
 $opcion = 0;
 $porcentaje = 0;
 $arregloJuegos = [];
+$juego = [];
 
 //Proceso:
 $arregloJuegos = cargarJuegos();
