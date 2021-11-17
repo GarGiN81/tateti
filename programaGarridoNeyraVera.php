@@ -153,7 +153,7 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
  * Función que dada la colección de juegos y el nombre de un jugador, retorna el resumen del jugador
  * @param array $arrayColeccionJuegos
  * @param string $nombreIngresado
- * @return array $resumenJugador
+ * 
  */
 //punto 7
 
@@ -211,7 +211,7 @@ echo "Empató: ".$resumenJugador["juegosEmpatados"]." juegos.\n";
 echo "Total de puntos acumulados: ".$resumenJugador["puntosAcumulados"]." puntos.\n";
 echo"**************************************.\n";
 }
-return $resumenJugador;
+
 }
 
 /**
@@ -359,7 +359,7 @@ do {
 
     
     switch ($opcion) {
-        case 1: 
+        case 1:
             $juego = jugar();
             $arregloJuegos = agregarJuego($arregloJuegos,$juego);
             break;
@@ -367,21 +367,20 @@ do {
             mostrarJuego($arregloJuegos);
             break;
         case 3: 
-                //verificar que el jugador existe y si no existe, mostrar que el jugador no jugo ningun juego
-                echo "Ingrese nombre del jugador ";
-                $nombreJugador = strtoupper(trim(fgets(STDIN)));
-                $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
-                if($indiceGanador==-1){
-                    echo "El jugador " . $nombreJugador . " no gano ningun juego. \n";
-                }elseif ($indiceGanador==-2) {
-                    echo " El jugador ".$nombreJugador. " no jugo ningun juego. \n";
-                }else{
-                    $signoJugador = verTipo($arregloJuegos,$indiceGanador,$nombreJugador);
-                    echo "**************************************** \n";
-                    echo "Juego TATETI: ". $indiceGanador + 1 . " ( gano " . $signoJugador . ") \n";
-                    echo "Jugador X: ".$arregloJuegos[$indiceGanador]["jugadorCruz"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCruz"]." puntos .\n";
-                    echo "Jugador O: ".$arregloJuegos[$indiceGanador]["jugadorCirculo"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCirculo"]." puntos .\n";
-                    echo "**************************************** \n";
+            echo "Ingrese nombre del jugador ";
+            $nombreJugador = strtoupper(trim(fgets(STDIN)));
+            $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
+            if($indiceGanador==-1){
+                echo "El jugador " . $nombreJugador . " no gano ningun juego. \n";
+            }elseif ($indiceGanador==-2) {
+                echo " El jugador ".$nombreJugador. " no jugo ningun juego. \n";
+            }else{
+                $signoJugador = verTipo($arregloJuegos,$indiceGanador,$nombreJugador);
+                echo "**************************************** \n";
+                echo "Juego TATETI: ". $indiceGanador + 1 . " ( gano " . $signoJugador . ") \n";
+                echo "Jugador X: ".$arregloJuegos[$indiceGanador]["jugadorCruz"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCruz"]." puntos .\n";
+                echo "Jugador O: ".$arregloJuegos[$indiceGanador]["jugadorCirculo"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCirculo"]." puntos .\n";
+                echo "**************************************** \n";
                 }
             break;
         case 4:
@@ -390,8 +389,9 @@ do {
             echo "El simbolo " . $simboloXoO . " gano el " . $porcentaje . "% de las partidas \n";
             break;
         case 5:
-            
-    
+            echo "Ingrese nombre del jugador ";
+            $nombreJugador = strtoupper(trim(fgets(STDIN)));
+            historialJugador($arregloJuegos,$nombreJugador);
             break;
         case 6:
             ordenaNombreCirculo($arregloJuegos);
