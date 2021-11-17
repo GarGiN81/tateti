@@ -305,7 +305,21 @@ function ordenaNombreCirculo($coleccionJuegos){
     uasort($coleccionJuegos, 'comparaNombreCirculo');
     print_r($coleccionJuegos);
 }
-
+/**
+ * Modulo que verifica si un jugador en X o O
+ * @param array $coleccionJuegos
+ * @param int $indice
+ * @param string $nombre
+ * @return string
+ */
+function verTipo ($coleccionJuegos,$indice,$nombre){
+    if($coleccionJuegos[$indice]["jugadorCruz"]==$nombre){
+        $tipo = "X";
+    }else{
+        $tipo = "O";
+    }
+    return $tipo;
+}
 
 
 /**************************************/
