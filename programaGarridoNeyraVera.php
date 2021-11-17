@@ -50,7 +50,7 @@ function seleccionarOpcion(){
     echo " (3) Mostrar el primer juego ganador \n" ;
     echo " (4) Mostrar el porcentaje de juegos ganados \n";
     echo " (5) Mostrar resumen de Jugador \n";
-    echo " (6) Jugar al tateti \n";
+    echo " (6) Mostrar listado de juegos Ordenados por jugador O \n";
     echo " (7) Salir \n";
     $opcion = solicitarOpcion();
     return $opcion; 
