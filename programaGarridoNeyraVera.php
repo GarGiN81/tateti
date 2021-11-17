@@ -123,7 +123,7 @@ function agregarJuego ($coleccionJuegos,$unJuego){
 //punto 6
 function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
     //int $nroJuego, $cantElementosColeccion, $indiceGanador
-    //boolean $juegoGanador
+    //boolean $juegoGanador, $banderaNombre
     $nroJuego=0;
     $juegoGanador=false;
     $cantElementosColeccion= count($coleccionJuegos);
