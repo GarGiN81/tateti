@@ -327,28 +327,27 @@ function verTipo ($coleccionJuegos,$indice,$nombre){
 /**************************************/
 
 //Declaración de variables:
-
+// array $coleccionJuegos
+// string $nombreJugador, $signoJugador
+// int $indiceGanador, $opcion
 
 //Inicialización de variables:
-
+$nombreJugador = "";
+$signoJugador = "";
+$indiceGanador = 0;
+$opcion = 0;
 
 //Proceso:
+$arregloJuegos = cargarJuegos();
 
-//$juego = jugar();
-//print_r($juego);
-//imprimirResultado($juego);
-
-
-
-/*
 do {
-    $opcion = ...;
+    $opcion = seleccionarOpcion();
 
     
     switch ($opcion) {
         case 1: 
-            //completar qué secuencia de pasos ejecutar si el usuario elige la opción 1
-
+            $juego = jugar();
+            $arregloJuegos = agregarJuego($arregloJuegos,$juego);
             break;
         case 2: 
             //completar qué secuencia de pasos ejecutar si el usuario elige la opción 2
@@ -361,6 +360,5 @@ do {
         
             //...
     }
-}  while ($opcion != X);
+}  while ($opcion != 7);
 
-*/
