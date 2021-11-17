@@ -24,6 +24,7 @@ include_once("tateti.php");
 //punto 1
 function cargarJuegos (){
 //array $coleccionJuegos
+$coleccionJuegos=[];
 $coleccionJuegos[0] = ["jugadorCruz"=> "MAXI" , "jugadorCirculo" => "JUAN", "puntosCruz"=> 5, "puntosCirculo" => 0];
 $coleccionJuegos[1] =  ["jugadorCruz"=> "KEVIN" , "jugadorCirculo" => "LUANA", "puntosCruz"=> 4, "puntosCirculo" => 0];
 $coleccionJuegos[2] =  ["jugadorCruz"=> "LUANA" , "jugadorCirculo" => "MAXI", "puntosCruz"=> 0, "puntosCirculo" => 3];
