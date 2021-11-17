@@ -44,33 +44,29 @@ return $coleccionJuegos;
 //punto 2
 function seleccionarOpcion(){
     // int $opcion
-    echo " (1) Jugar al tateti" . '\n';
-    echo " (2) Mostrar un juego" . '\n';
-    echo " (3) Mostrar el primer juego ganador" . '\n';
-    echo " (4) Mostrar el porcentaje de juegos ganados" . '\n';
-    echo " (5) Mostrar resumen de Jugador" . '\n';
-    echo " (6) Jugar al tateti" . '\n';
-    echo " (7) Salir" . '\n';
+    echo " (1) Jugar al tateti \n";
+    echo " (2) Mostrar un juego \n";
+    echo " (3) Mostrar el primer juego ganador \n" ;
+    echo " (4) Mostrar el porcentaje de juegos ganados \n";
+    echo " (5) Mostrar resumen de Jugador \n";
+    echo " (6) Jugar al tateti \n";
+    echo " (7) Salir \n";
     $opcion = solicitarOpcion();
     return $opcion; 
 
 }
 
-/** Modulo que pide al usuario un numero entre el rango del menu, si el numero no es valido, vuelve a pedrilo. Retorna un numero valido
+//punto 3
+/** Modulo que pide al usuario un numero entre el rango del menu, si no es valido vuelve a pedirlo. Retorna un numero entero
  * @return int
  */
-//punto 3
-function solicitarOpcion (){
-    //int $opcionMenu 
-
-    echo "Ingrese una opcion del menu: ";
-    $opcionMenu=trim(fgets(STDIN));
-    if ($opcionMenu<1 && $opcionMenu>7){
-        echo "Error, debe ser un numero valido del menu de opciones ";
-        echo "Ingrese una opcion del menu: ";
-        $opcionMenu=trim(fgets(STDIN));
-    } 
-    return ($opcionMenu);
+function solicitarOpcion(){
+    //int $numeroOpcion, $min, $max
+    $min=1;
+    $max=7;
+    echo "Ingrese una numero entre la opcion " . $min. " y la opcion ".$max." : ";
+    $numeroOpcion=solicitarNumeroEntre($min, $max);
+    return $numeroOpcion;
 }
 
 
@@ -124,6 +120,55 @@ function primerJuegoGanador($coleccionJuegos, $nombreJugadorSolicitado) {
         }
     return $indiceGanador;
         
+}
+/**
+ * Modulo sin parametro formales que solicite al usuario un símbolo X o O, y retorne el símbolo elegido
+ * @return string
+ */
+// punto 8
+function ingresarSimbolo (){
+    //string $simbolo
+    echo "Ingrese un simbolo (x/o):";
+    $simbolo = trim(fgets(STDIN));
+    while(strtolower($simbolo)!= "x" && strtolower($simbolo) != "o"){
+        echo "Ingrese un simbolo valido (x/o):";
+        $simbolo = trim(fgets(STDIN));
+    }
+    return $simbolo;
+}
+
+// punto 9
+/** Modulo que toma por parametro una coleccion de juegos y retorna la cantidad de juegos ganados 
+ * @param array $coleccionJuegos
+ * @return int 
+ */
+function cantidadJuegosGanadosColeccion ($coleccionJuegos){
+    //int $cantJuegosGanados
+    $cantJuegosGanados=0;
+    foreach ($coleccionJuegos as $indice => $datos) {
+        if ($coleccionJuegos[$indice]["puntosCruz"] !== $coleccionJuegos[$indice]["puntosCirculo"]){
+            $cantJuegosGanados++;
+        }
+    }
+    return $cantJuegosGanados;
+}
+/**
+ * Modulo que compara los nombres de los jugadores circulos
+ * @param array $a
+ * @param array $b
+ * @return int
+ */
+function comparaNombreCirculo($a, $b) {
+    return strcmp ($a["jugadorCirculo"],$b["jugadorCirculo"]);
+}
+/**
+ * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
+ * @param array $coleccionJuegos
+ */
+//punto 11
+function ordenaNombreCirculo($coleccionJuegos){
+    uasort($coleccionJuegos, 'comparaNombreCirculo');
+    print_r($coleccionJuegos);
 }
 
 /**
@@ -201,7 +246,7 @@ return $resumenJugador;
 
 //Proceso:
 
-$juego = jugar();
+//$juego = jugar();
 //print_r($juego);
 //imprimirResultado($juego);
 
