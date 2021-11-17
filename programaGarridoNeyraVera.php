@@ -222,10 +222,10 @@ return $resumenJugador;
 function ingresarSimbolo (){
     //string $simbolo
     echo "Ingrese un simbolo (x/o):";
-    $simbolo = trim(fgets(STDIN));
-    while(strtolower($simbolo)!= "x" && strtolower($simbolo) != "o"){
+    $simbolo = strtoupper(trim(fgets(STDIN)));
+    while($simbolo!= "X" && $simbolo != "O"){
         echo "Ingrese un simbolo valido (x/o):";
-        $simbolo = trim(fgets(STDIN));
+        $simbolo = strtoupper(trim(fgets(STDIN)));
     }
     return $simbolo;
 }
@@ -339,14 +339,17 @@ function verTipo ($coleccionJuegos,$indice,$nombre){
 
 //Declaración de variables:
 // array $coleccionJuegos
-// string $nombreJugador, $signoJugador
+// string $nombreJugador, $signoJugador, $simboloXoO
 // int $indiceGanador, $opcion
+// float $porcentaje
 
 //Inicialización de variables:
 $nombreJugador = "";
 $signoJugador = "";
+$simboloXoO = "";
 $indiceGanador = 0;
 $opcion = 0;
+$porcentaje = 0;
 
 //Proceso:
 $arregloJuegos = cargarJuegos();
@@ -382,9 +385,12 @@ do {
                 }
             break;
         case 4:
-
+            $simboloXoO = ingresarSimbolo();
+            $porcentaje = porcentajeSimboloG($arregloJuegos,$simboloXoO);
+            echo "El simbolo " . $simboloXoO . " gano el " . $porcentaje . "% de las partidas \n";
             break;
         case 5:
+            
     
             break;
         case 6:
