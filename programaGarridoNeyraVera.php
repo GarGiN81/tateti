@@ -189,9 +189,6 @@ function historialJugador($arrayColeccionJuegos, $nombreIngresado){
             }else{
                 $perdidos=$perdidos+1;
                 }
-        }elseif($arrayColeccionJuegos[$numeroJuego]["jugadorCruz"]!=$nombreIngresado&&$arrayColeccionJuegos[$numeroJuego]["jugadorCirculo"]!=$nombreIngresado){
-            $noExiste=$noExiste+1;
-            
         }
     }
 $resumenJugador["nombre"]=$nombreIngresado;
@@ -199,19 +196,7 @@ $resumenJugador["juegosGanados"]=$ganados;
 $resumenJugador["juegosEmpatados"]=$empatados;
 $resumenJugador["juegosPerdidos"]=$perdidos;
 $resumenJugador["puntosAcumulados"]=$puntajeTotal;
-echo"**************************************.\n";
-if($noExiste==count($arrayColeccionJuegos)){
-    echo "El nombre ingresado no corresponde a un jugador.\n";
-
-}else{
-echo "jugador: ". $resumenJugador["nombre"] .".\n";
-
-echo "Ganó: ".$resumenJugador["juegosGanados"]." juegos.\n";
-echo "Perdió: ".$resumenJugador["juegosPerdidos"]." juegos.\n";
-echo "Empató: ".$resumenJugador["juegosEmpatados"]." juegos.\n";
-echo "Total de puntos acumulados: ".$resumenJugador["puntosAcumulados"]." puntos.\n";
-echo"**************************************.\n";
-}
+return $resumenJugador;
 
 }
 
@@ -339,7 +324,7 @@ function verTipo ($coleccionJuegos,$indice,$nombre){
 /**************************************/
 
 //Declaración de variables:
-// array $arregloJuegos, $juego
+// array $arregloJuegos, $juego, $arregloResumen
 // string $nombreJugador, $signoJugador, $simboloXoO
 // int $indiceGanador, $opcion
 // float $porcentaje
@@ -353,6 +338,7 @@ $opcion = 0;
 $porcentaje = 0;
 $arregloJuegos = [];
 $juego = [];
+$arregloResumen = [];
 
 //Proceso:
 $arregloJuegos = cargarJuegos();
@@ -394,8 +380,22 @@ do {
         case 5:
             echo "Ingrese nombre del jugador ";
             $nombreJugador = strtoupper(trim(fgets(STDIN)));
-            historialJugador($arregloJuegos,$nombreJugador);
+            $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
+            if($indiceGanador==-2){
+                echo "El nombre ingresado no corresponde a un jugador.\n";
+            }else{
+                $arregloResumen = historialJugador($arregloJuegos,$nombreJugador);
+                echo"**************************************.\n";
+                echo "jugador: ". $arregloResumen["nombre"] .".\n";
+                echo "Ganó: ".$arregloResumen["juegosGanados"]." juegos.\n";
+                echo "Perdió: ".$arregloResumen["juegosPerdidos"]." juegos.\n";
+                echo "Empató: ".$arregloResumen["juegosEmpatados"]." juegos.\n";
+                echo "Total de puntos acumulados: ".$arregloResumen["puntosAcumulados"]." puntos.\n";
+                echo"**************************************.\n";
+            
+            }
             break;
+            
         case 6:
             ordenaNombreCirculo($arregloJuegos);
             break;
