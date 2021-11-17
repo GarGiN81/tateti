@@ -367,9 +367,16 @@ do {
                  echo "Jugador O: ".$arregloJuegos[$indiceGanador]["jugadorCirculo"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCirculo"]." puntos .\n";
                  echo "**************************************** \n";
              }
-             break;
-        
-            //...
+            break;
+        case 4:
+
+            break;
+        case 5:
+    
+            break;
+        case 6:
+            ordenaNombreCirculo($arregloJuegos);
+            break;
     }
 }  while ($opcion != 7);
 
