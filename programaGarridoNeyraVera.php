@@ -218,14 +218,14 @@ function ingresarSimbolo (){
 
 // punto 9
 /** Modulo que toma por parametro una coleccion de juegos y retorna la cantidad de juegos ganados 
- * @param array $coleccionJuegos
+ * @param array $recopilacionJuegos
  * @return int 
  */
-function cantidadJuegosGanadosColeccion ($coleccionJuegos){
+function cantidadJuegosGanadosColeccion ($recopilacionJuegos){
     //int $cantJuegosGanados
     $cantJuegosGanados=0;
-    foreach ($coleccionJuegos as $indice => $datos) {
-        if ($coleccionJuegos[$indice]["puntosCruz"] !== $coleccionJuegos[$indice]["puntosCirculo"]){
+    foreach ($recopilacionJuegos as $indice => $datos) {
+        if ($recopilacionJuegos[$indice]["puntosCruz"] !== $recopilacionJuegos[$indice]["puntosCirculo"]){
             $cantJuegosGanados++;
         }
     }
