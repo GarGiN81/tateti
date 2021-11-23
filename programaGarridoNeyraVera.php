@@ -383,7 +383,7 @@ do {
             echo "El simbolo " . $simboloXoO . " gano el " . $porcentaje . "% de las partidas \n";
             break;
         case 5:
-            echo "Ingrese nombre del jugador ";
+            echo "Ingrese nombre del jugador: ";
             $nombreJugador = strtoupper(trim(fgets(STDIN)));
             $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
             if($indiceGanador==-2){
