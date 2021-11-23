@@ -154,19 +154,18 @@ function primerJuegoGanador($serieJuegos, $nombreJugadorSolicitado) {
  * Función que dada la colección de juegos y el nombre de un jugador, retorna el resumen del jugador
  * @param array $arrayColeccionJuegos
  * @param string $nombreIngresado
- * 
+ * @return array
  */
 //punto 7
 
 function historialJugador($arrayColeccionJuegos, $nombreIngresado){
-    //int $ganados, $puntajeTotal, $empatados, $perdidos, $noExiste
+    //int $ganados, $puntajeTotal, $empatados, $perdidos
     $ganados=0;
     $puntajeTotal=0;
     $empatados=0;
     $perdidos=0;
-    $noExiste=0;
     
-    $resumenJugador=[];
+    
 
     for ($numeroJuego=0;$numeroJuego<count($arrayColeccionJuegos);$numeroJuego++){
         if ($arrayColeccionJuegos[$numeroJuego]["jugadorCruz"]==$nombreIngresado){
@@ -191,6 +190,7 @@ function historialJugador($arrayColeccionJuegos, $nombreIngresado){
                 }
         }
     }
+$resumenJugador=[];
 $resumenJugador["nombre"]=$nombreIngresado;
 $resumenJugador["juegosGanados"]=$ganados;
 $resumenJugador["juegosEmpatados"]=$empatados;
