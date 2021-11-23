@@ -304,13 +304,13 @@ function ordenaNombreCirculo($acopioJuegos){
 }
 /**
  * Modulo que verifica si un jugador en X o O
- * @param array $coleccionJuegos
+ * @param array $coleccionarJuegos
  * @param int $indice
  * @param string $nombre
  * @return string
  */
-function verTipo ($coleccionJuegos,$indice,$nombre){
-    if($coleccionJuegos[$indice]["jugadorCruz"]==$nombre){
+function verTipo ($coleccionarJuegos,$indice,$nombre){
+    if($coleccionarJuegos[$indice]["jugadorCruz"]==$nombre){
         $tipo = "X";
     }else{
         $tipo = "O";
