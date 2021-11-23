@@ -210,7 +210,8 @@ function ingresarSimbolo (){
     echo "Ingrese un simbolo (x/o):";
     $simbolo = strtoupper(trim(fgets(STDIN)));
     while($simbolo!= "X" && $simbolo != "O"){
-        echo "Ingrese un simbolo valido (x/o):";
+        echo "El símbolo ingresado no corresponde a un símbolo válido. \n";
+        echo "Por favor ingrese un símbolo valido (x/o):";
         $simbolo = strtoupper(trim(fgets(STDIN)));
     }
     return $simbolo;
