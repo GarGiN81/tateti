@@ -108,11 +108,11 @@ function mostrarJuego ($coleccionDeJuegos){
  * @return array
  */
 //punto 5
-function agregarJuego ($coleccionJuegos,$unJuego){
+function agregarJuego ($repertorioJuegos,$unJuego){
     //int $largoArreglo
-    $largoArreglo = count($coleccionJuegos);
-    $coleccionJuegos [$largoArreglo]= $unJuego;
-    return $coleccionJuegos;
+    $largoArreglo = count($repertorioJuegos);
+    $repertorioJuegos [$largoArreglo]= $unJuego;
+    return $repertorioJuegos;
 }
 
 /** Modulo que toma por parametro una coleccion de juegos y el nombre de un jugador, retorna indice del primer juego ganado por el jugador indicado
