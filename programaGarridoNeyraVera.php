@@ -360,9 +360,13 @@ do {
             $nombreJugador = strtoupper(trim(fgets(STDIN)));
             $indiceGanador=primerJuegoGanador($arregloJuegos,$nombreJugador);
             if($indiceGanador==-1){
+                echo"**************************************.\n";
                 echo "El jugador " . $nombreJugador . " no gano ningun juego. \n";
+                echo"**************************************.\n";
             }elseif ($indiceGanador==-2) {
+                echo"**************************************.\n";
                 echo " El nombre ".$nombreJugador. " no corresponde a ningun jugador. \n";
+                echo"**************************************.\n";
             }else{
                 $signoJugador = verTipo($arregloJuegos,$indiceGanador,$nombreJugador);
                 echo "**************************************** \n";
