@@ -280,7 +280,7 @@ function porcentajeSimboloG($totalJuegos,$simbolOx){
     }elseif($simbolOx=="O"){
         $porcentajeGanado=$ganadosO*100/$totalGanados;
     }
-return $porcentajeGanado; 
+return round($porcentajeGanado,2); 
 
 }
 /**
