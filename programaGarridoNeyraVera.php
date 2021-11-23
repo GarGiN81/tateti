@@ -295,12 +295,12 @@ function comparaNombreCirculo($a, $b) {
 
 /**
  * Modulo que muestra la coleccion de juegos ordenadas por el nombre del jugador circulo
- * @param array $coleccionJuegos
+ * @param array $acopioJuegos
  */
 //punto 11
-function ordenaNombreCirculo($coleccionJuegos){
-    uasort($coleccionJuegos, 'comparaNombreCirculo');
-    print_r($coleccionJuegos);
+function ordenaNombreCirculo($acopioJuegos){
+    uasort($acopioJuegos, 'comparaNombreCirculo');
+    print_r($acopioJuegos);
 }
 /**
  * Modulo que verifica si un jugador en X o O
