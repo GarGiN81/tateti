@@ -77,16 +77,16 @@ function solicitarOpcion(){
  * @param array $coleccionJuegos
 */
 //Punto 4)
-function mostrarJuego ($coleccionJuegos){ 
+function mostrarJuego ($coleccionDeJuegos){ 
     //int $nroJuego, $cantidadDeJuegos
     //string $resultado
     $resultado = "";
-    $cantidadDeJuegos = count($coleccionJuegos);
+    $cantidadDeJuegos = count($coleccionDeJuegos);
 	echo "Ingrese un número de juego: ";
     $nroJuego = solicitarNumeroEntre(1,$cantidadDeJuegos);
     $nroJuego = $nroJuego - 1;
-    if($coleccionJuegos[$nroJuego]["puntosCruz"]!=$coleccionJuegos[$nroJuego]["puntosCirculo"]){
-        if($coleccionJuegos[$nroJuego]["puntosCruz"]>$coleccionJuegos[$nroJuego]["puntosCirculo"]){
+    if($coleccionDeJuegos[$nroJuego]["puntosCruz"]!=$coleccionDeJuegos[$nroJuego]["puntosCirculo"]){
+        if($coleccionDeJuegos[$nroJuego]["puntosCruz"]>$coleccionDeJuegos[$nroJuego]["puntosCirculo"]){
             $resultado = "gano X";
         }else{
             $resultado = "gano O";
@@ -96,8 +96,8 @@ function mostrarJuego ($coleccionJuegos){
     }
     echo "**************************************** \n";
     echo "Juego TATETI: ". $nroJuego + 1 . " (" . $resultado . ") \n";
-	echo "Jugador X: ".$coleccionJuegos[$nroJuego]["jugadorCruz"]." Obtuvo: ".$coleccionJuegos[$nroJuego]["puntosCruz"]." puntos .\n";
-    echo "Jugador O: ".$coleccionJuegos[$nroJuego]["jugadorCirculo"]." Obtuvo: ".$coleccionJuegos[$nroJuego]["puntosCirculo"]." puntos .\n";
+	echo "Jugador X: ".$coleccionDeJuegos[$nroJuego]["jugadorCruz"]." Obtuvo: ".$coleccionDeJuegos[$nroJuego]["puntosCruz"]." puntos .\n";
+    echo "Jugador O: ".$coleccionDeJuegos[$nroJuego]["jugadorCirculo"]." Obtuvo: ".$coleccionDeJuegos[$nroJuego]["puntosCirculo"]." puntos .\n";
     echo "**************************************** \n";
 }
 
