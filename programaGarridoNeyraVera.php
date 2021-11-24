@@ -34,7 +34,22 @@ $coleccionJuegos[5] =  ["jugadorCruz"=> "LUANA" , "jugadorCirculo" => "VICTOR", 
 $coleccionJuegos[6] = ["jugadorCruz"=> "LEO" , "jugadorCirculo" => "CIRO", "puntosCruz"=> 2, "puntosCirculo" =>0];
 $coleccionJuegos[7] =  ["jugadorCruz"=> "MARTIN" , "jugadorCirculo" => "FABI", "puntosCruz"=> 0, "puntosCirculo" => 2];
 $coleccionJuegos[8] =  ["jugadorCruz"=> "NICO" , "jugadorCirculo" => "KEVIN", "puntosCruz"=> 1, "puntosCirculo" => 1];
-$coleccionJuegos[9] = ["jugadorCruz"=> "MARIA" , "jugadorCirculo" => "MAXI", "puntosCruz"=> 3, "puntosCirculo" => 0];;
+$coleccionJuegos[9] = ["jugadorCruz"=> "MARIA" , "jugadorCirculo" => "MAXI", "puntosCruz"=> 3, "puntosCirculo" => 0];
+$coleccionJuegos = [];
+
+$jg1 = ["jugadorCruz" => "AMARILIS", "jugadorCirculo" => "MILOS",    "puntosCruz" => 1, "puntosCirculo" => 1];
+$jg2 = ["jugadorCruz" => "ZENDA",    "jugadorCirculo" => "AMARILIS", "puntosCruz" => 3, "puntosCirculo" => 0];
+$jg3 = ["jugadorCruz" => "ZENDA",    "jugadorCirculo" => "MILOS",    "puntosCruz" => 0, "puntosCirculo" => 4];
+$jg4 = ["jugadorCruz" => "CALIXTO",  "jugadorCirculo" => "TRUMAN",   "puntosCruz" => 1, "puntosCirculo" => 1];
+$jg5 = ["jugadorCruz" => "AMARILIS", "jugadorCirculo" => "MILOS",    "puntosCruz" => 5, "puntosCirculo" => 0];
+$jg6 = ["jugadorCruz" => "FEDORA",   "jugadorCirculo" => "CALIXTO",  "puntosCruz" => 0, "puntosCirculo" => 3];
+$jg7 = ["jugadorCruz" => "TRUMAN",   "jugadorCirculo" => "AMARILIS", "puntosCruz" => 4, "puntosCirculo" => 0];
+$jg8 = ["jugadorCruz" => "CALIXTO",  "jugadorCirculo" => "TRUMAN",   "puntosCruz" => 1, "puntosCirculo" => 1];
+$jg9 = ["jugadorCruz" => "TRUMAN",   "jugadorCirculo" => "FEDORA",   "puntosCruz" => 2, "puntosCirculo" => 0];
+$jg10= ["jugadorCruz" => "MILOS",    "jugadorCirculo" => "ZENDA",   "puntosCruz" => 1, "puntosCirculo" => 1];
+
+array_push($coleccionJuegos, $jg1, $jg2, $jg3, $jg4, $jg5, $jg6, $jg7, $jg8, $jg9, $jg10);
+
 return $coleccionJuegos;
 }
 
@@ -172,7 +187,7 @@ function historialJugador($arrayColeccionJuegos, $nombreIngresado){
             if($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]>$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
                 $ganados=$ganados+1;
                 $puntajeTotal=$puntajeTotal+$arrayColeccionJuegos[$numeroJuego]["puntosCruz"];
-            }elseif($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]=$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
+            }elseif($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]==$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
                 $empatados=$empatados+1;
                 $puntajeTotal=$puntajeTotal+1;
             }else{
@@ -182,7 +197,7 @@ function historialJugador($arrayColeccionJuegos, $nombreIngresado){
             if ($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]<$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
                 $ganados=$ganados+1;
                 $puntajeTotal=$puntajeTotal+$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"];
-            }elseif($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]=$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
+            }elseif($arrayColeccionJuegos[$numeroJuego]["puntosCruz"]==$arrayColeccionJuegos[$numeroJuego]["puntosCirculo"]){
                 $empatados=$empatados+1;
                 $puntajeTotal=$puntajeTotal+1;
             }else{
