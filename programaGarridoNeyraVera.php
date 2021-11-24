@@ -236,7 +236,7 @@ function cantidadJuegosGanadosColeccion ($recopilacionJuegos){
 /**
  * Modulo que dada una colección de juegos y un símbolo, recibidos por parámetros, retorna la cantidad de juegos ganados (por símbolo)
  * @param array $juegosTotales
- * @param string $simnoloXo
+ * @param string $simboloXo
  * @return int
  */
 //punto 10
@@ -300,11 +300,13 @@ function comparaNombreCirculo($a, $b) {
  */
 //punto 11
 function ordenaNombreCirculo($acopioJuegos){
+    //Ordena un array con una funcion de comparacion definida por el usuario y mantiene la asociacion de indices
     uasort($acopioJuegos, 'comparaNombreCirculo');
+    //Muestra informacion sobre una variable en una forma que es legible por humanos
     print_r($acopioJuegos);
 }
 /**
- * Modulo que verifica si un jugador en X o O
+ * Modulo que verifica si un jugador es X o O
  * @param array $coleccionarJuegos
  * @param int $indice
  * @param string $nombre
