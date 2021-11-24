@@ -349,7 +349,7 @@ $arregloJuegos = cargarJuegos();
 do {
     $opcion = seleccionarOpcion();
 
-    
+    // Estructura de control alternativa o de condicion. Similar a una serie de sentencias IF en la misma expresion. Compara el valor de una variable con muchos valores diferentes y ejecuta una parte de codigo distinta, dependiendo a que valor es igual.
     switch ($opcion) {
         case 1:
             $juego = jugar();
