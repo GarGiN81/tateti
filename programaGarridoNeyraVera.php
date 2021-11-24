@@ -92,14 +92,11 @@ function solicitarOpcion(){
  * @param array $coleccionDeJuegos
 */
 //Punto 4)
-function mostrarJuego ($coleccionDeJuegos){ 
+function mostrarJuego ($coleccionDeJuegos,$nroJuego){ 
     //int $nroJuego, $cantidadDeJuegos
     //string $resultado
     $resultado = "";
-    $cantidadDeJuegos = count($coleccionDeJuegos);
-	echo "Ingrese un número de juego: ";
-    $nroJuego = solicitarNumeroEntre(1,$cantidadDeJuegos);
-    $nroJuego = $nroJuego - 1;
+    
     if($coleccionDeJuegos[$nroJuego]["puntosCruz"]!=$coleccionDeJuegos[$nroJuego]["puntosCirculo"]){
         if($coleccionDeJuegos[$nroJuego]["puntosCruz"]>$coleccionDeJuegos[$nroJuego]["puntosCirculo"]){
             $resultado = "gano X";
@@ -320,21 +317,7 @@ function ordenaNombreCirculo($acopioJuegos){
     //Muestra informacion sobre una variable en una forma que es legible por humanos
     print_r($acopioJuegos);
 }
-/**
- * Modulo que verifica si un jugador es X o O
- * @param array $coleccionarJuegos
- * @param int $indice
- * @param string $nombre
- * @return string
- */
-function verTipo ($coleccionarJuegos,$indice,$nombre){
-    if($coleccionarJuegos[$indice]["jugadorCruz"]==$nombre){
-        $tipo = "X";
-    }else{
-        $tipo = "O";
-    }
-    return $tipo;
-}
+
 
 
 /**************************************/
@@ -371,7 +354,11 @@ do {
             $arregloJuegos = agregarJuego($arregloJuegos,$juego);
             break;
         case 2: 
-            mostrarJuego($arregloJuegos);
+            $cantidadDeJuegos = count($arregloJuegos);
+	        echo "Ingrese un número de juego: ";
+            $numIndice = solicitarNumeroEntre(1,$cantidadDeJuegos);
+            $numIndice = $numIndice - 1;
+            mostrarJuego($arregloJuegos,$numIndice);
             break;
         case 3: 
             echo "Ingrese nombre del jugador ";
@@ -385,14 +372,9 @@ do {
                 echo"****************************************************\n";
                 echo " El nombre ".$nombreJugador. " no corresponde a ningun jugador. \n";
                 echo"****************************************************\n";
-            }else{
-                $signoJugador = verTipo($arregloJuegos,$indiceGanador,$nombreJugador);
-                echo "**************************************** \n";
-                echo "Juego TATETI: ". $indiceGanador + 1 . " ( gano " . $signoJugador . ") \n";
-                echo "Jugador X: ".$arregloJuegos[$indiceGanador]["jugadorCruz"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCruz"]." puntos .\n";
-                echo "Jugador O: ".$arregloJuegos[$indiceGanador]["jugadorCirculo"]." Obtuvo: ".$arregloJuegos[$indiceGanador]["puntosCirculo"]." puntos .\n";
-                echo "**************************************** \n";
-                }
+            }else {
+                mostrarJuego($arregloJuegos,$indiceGanador);
+            }
             break;
         case 4:
             $simboloXoO = ingresarSimbolo();
